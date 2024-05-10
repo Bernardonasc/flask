@@ -105,7 +105,7 @@ def _called_with_wrong_args(f: t.Callable[..., Flask]) -> bool:
         while tb is not None:
             if tb.tb_frame.f_code is f.__code__:
                 # In the function, it was called successfully.
-                return False
+                return True
 
             tb = tb.tb_next
 
